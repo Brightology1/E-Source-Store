@@ -1,0 +1,1 @@
+INSERT INTO eproduct (name, desc, brand, price, category, release_date, available, quantity) VALUES ('pop 3', 'Smart Phone', 'Later', 54000.00, 'Techy', '2024-05-05', true, 50), ('pop 6', 'Smart Phone', 'Latest', 60000.00, 'Techy', '2024-04-05', true, 30);
