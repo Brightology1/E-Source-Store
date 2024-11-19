@@ -1,5 +1,6 @@
 package org.brightology.esourcestore.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jdk.jfr.Name;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,8 @@ public class EProduct {
     private String brand;
     private BigDecimal price;
     private String category;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    //@JsonFormat(pattern = "dd-MM-YYYY")
     private Date releaseDate;
     private boolean available;
     private int quantity;

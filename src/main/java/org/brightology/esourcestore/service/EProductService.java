@@ -16,4 +16,8 @@ public class EProductService {
     public List<EProduct> getAllProducts() {
         return erepos.findAll();
     }
+
+    public EProduct getEProductById(int id){
+        return erepos.findById(id).orElse(null);
+    }
 }
