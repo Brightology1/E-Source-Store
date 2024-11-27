@@ -24,10 +24,17 @@ public class EProduct {
     private String brand;
     private BigDecimal price;
     private String category;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     //@JsonFormat(pattern = "dd-MM-YYYY")
     private Date releaseDate;
     private boolean available;
     private int quantity;
+
+    private String imageName;
+    private String imageType;
+    //private byte[] imageData;
+    @Lob
+    private byte[] imageDate;
+
 
 }
