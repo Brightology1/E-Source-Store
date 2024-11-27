@@ -29,4 +29,15 @@ public class EProductService {
         eprod.setImageDate(imageFile.getBytes());
         return erepos.save(eprod);
     }
+
+    public EProduct updateEProduct(int id, EProduct eprod, MultipartFile imageFile) throws IOException {
+        eprod.setImageDate(imageFile.getBytes());
+        eprod.setImageName(imageFile.getOriginalFilename());
+        eprod.setImageType(imageFile.getContentType());
+        return erepos.save(eprod);
+    }
+
+    public void deleteEProduct(int id) {
+        erepos.deleteById(id);
+    }
 }
