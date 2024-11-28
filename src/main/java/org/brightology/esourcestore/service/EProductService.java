@@ -40,4 +40,8 @@ public class EProductService {
     public void deleteEProduct(int id) {
         erepos.deleteById(id);
     }
+
+    public List<EProduct> searchEProduct(String keyword) {
+        return erepos.searchEProduct(keyword);
+    }
 }
