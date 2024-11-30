@@ -1,5 +1,6 @@
 package org.brightology.esourcestore.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.brightology.esourcestore.model.EProduct;
 import org.brightology.esourcestore.service.EProductService;
 import org.brightology.esourcestore.service.ProductService;
@@ -26,6 +27,11 @@ public class EProductController {
     @GetMapping("eproducts")
     public ResponseEntity<List<EProduct>> getAllProducts() {
         return new ResponseEntity<>(eservice.getAllProducts(), HttpStatus.OK);
+    }
+
+    @GetMapping("/session")
+    public String eSession(HttpServletRequest request){
+        return "The Session ID is " + request.getSession().getId();
     }
 
     @GetMapping("/eproduct/{id}")
