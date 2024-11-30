@@ -1,8 +1,10 @@
 package org.brightology.esourcestore.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.brightology.esourcestore.model.Products;
 import org.brightology.esourcestore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +18,11 @@ public class ProductController {
     @RequestMapping("/")
     public String homePage(){
         return "Welcome to the Home Page!!!";
+    }
+
+    @GetMapping("/csrf_token")
+    public CsrfToken getCrsfToken(HttpServletRequest request){
+        return (CsrfToken) request.getAttribute("_csrf");
     }
 
     @RequestMapping("/ProductsHome")
